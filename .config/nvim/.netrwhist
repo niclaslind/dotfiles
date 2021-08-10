@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/home/niclas/.config/alacritty'
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/nlind1/repos/oia/beagle/beamylabs-start'
+let g:netrw_dirhist_2='/home/nlind1/.config/rofi'
+let g:netrw_dirhist_1='/home/nlind1/.config/alacritty'

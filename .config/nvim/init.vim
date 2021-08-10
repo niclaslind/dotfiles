@@ -1,86 +1,48 @@
-"Plug-ins
-call plug#begin('~/.config/nvim/plugged')
-" Tools
-    Plug 'junegunn/goyo.vim'
-    Plug 'vifm/vifm.vim'
-    Plug 'junegunn/limelight.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'deoplete-plugins/deoplete-clang'
-" Syntax
-    Plug 'tpope/vim-markdown'
-    Plug 'ap/vim-css-color' "Displays a preview of colors with CSS 
-    Plug 'vim-scripts/fountain.vim'
-    Plug 'arakashic/chromatica.nvim'
-" Color-schemes
-    Plug 'morhetz/gruvbox' "My favorite theme
-    Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'ajh17/Spacegray.vim'
-    Plug 'chriskempson/base16-vim'
-call plug#end() 
- 
-"General Settings
-set encoding=UTF-8
-filetype plugin indent on  "Enabling Plugin & Indent
-syntax on  "Turning Syntax on
-set autoread wildmode=longest,list,full
-set spell spelllang=en_us
-set backspace=indent,eol,start confirm
-set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab  
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set hls is ic
-set laststatus=2 cmdheight=1
-au BufRead,BufNewFile *.fountain set filetype=fountain
-set splitbelow splitright 
-set nobackup nowritebackup
+set shell=/bin/bash
+let mapleader = "\<Space>"
 
-"Status-line
-set statusline=
-set statusline+=%#IncSearch#
-set statusline+=\ %y
-set statusline+=\ %r
-set statusline+=%#CursorLineNr#
-set statusline+=\ %F
-set statusline+=%= "Right side settings
-set statusline+=%#Search#
-set statusline+=\ %l/%L
-set statusline+=\ [%c]
+set nocompatible
+filetype off
 
-map <F1> :colorscheme gruvbox<CR>
-map <F2> :colorscheme base16-default-dark<CR>
-map <F3> :colorscheme hybrid_reverse<CR>
-map <F4> :colorscheme PaperColor<CR>
-map <F5> :colorscheme spacegray<CR>
+"Plugins
+call plug#begin()
 
-"Color Settings
-colorscheme gruvbox
-set background=dark cursorline termguicolors
+" Load plugins
+" VIM enhancements
+Plug 'ciaranm/securemodelines'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'justinmk/vim-sneak'
 
-hi! Normal ctermbg=NONE guibg=NONE 
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+" GUI enhancements
+Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
 
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
+" Fuzzy finder
+Plug 'airblade/vim-rooter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-"Goyo settings
-function! s:goyo_enter()
-    set noshowmode
-    set noshowcmd
-    set nocursorline
-    CocDisable
-    Limelight
-endfunction
+" Semantic language support
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'nvim-lua/completion-nvim'
 
-function! s:goyo_leave()
-    set showmode
-    set showcmd
-    set cursorline
-    CocEnable
-    Limelight!
-endfunction
+" Syntactic language support
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-clang-format'
+"Plug 'fatih/vim-go'
+Plug 'dag/vim-fish'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave() 
+call plug#end()
+
+if has('nvim')
+    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set inccommand=nosplit
+    noremap <C-q> :confirm qall<CR>
+end

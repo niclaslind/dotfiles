@@ -1,32 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export LANG=en_US.UTF-8
-
-# Path to antigen
-source ~/.bin/antigen.zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle lein
-antigen bundle command-not-found
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-
-# Load the theme.
-antigen theme denysdovhan/spaceship-prompt
-
-# Tell Antigen that you're done.
-antigen apply
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/niclas/.oh-my-zsh"
+export ZSH="/home/nlind1/.oh-my-zsh"
+
+export HTTP_PROXY=http://127.0.0.1:1087
+export HTTPS_PROXY=http://127.0.0.1:1087
+export NO_PROXY=localhost,127.0.0.0
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -57,7 +37,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -69,6 +49,8 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -121,6 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Export go path
 export PATH=$PATH:/usr/local/go/bin
+
+source /opt/ros/foxy/setup.zsh
+
+eval "$(starship init zsh)"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

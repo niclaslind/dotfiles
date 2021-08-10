@@ -10,19 +10,19 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: .8
+background_opacity: .95
 window.dynamic_title: true
 
 # Font Customization
 font:
   normal:
-    family: Hack
-    style: Regular
+    family: Ubuntu Mono
+    style: Bold
   bold:
-    family: Hack
+    family: Ubuntu Mono
     style: Bold
   italic:
-    family: Hack 
+    family: Ubuntu Mono
     style: Italic
   size: 8
   offset:
@@ -72,4 +72,5 @@ cursor:
 
 key_bindings:
   - { key: N, mods: Control, action: SpawnNewInstance }
+
 
