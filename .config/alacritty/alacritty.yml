@@ -1,71 +1,206 @@
 # Window Customization
 window:
   dimensions:
-    columns: 140
-    lines: 38
+    columns: 160
+    lines: 36
   padding:
     x: 15
     y: 15
   decorations: none
+
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: .95
+
+background_opacity: 0.96
 window.dynamic_title: true
 
 # Font Customization
 font:
+
   normal:
     family: Ubuntu Mono
     style: Bold
+  
   bold:
     family: Ubuntu Mono
     style: Bold
+  
   italic:
     family: Ubuntu Mono
     style: Italic
-  size: 8
+
+  size: 11
+
   offset:
     x: 0
     y: 0
+  
   glyph_offset:
     x: 0
     y: 0
+  
   use_thin_strokes: false
-  debug:
-    persistent_logging: false
-draw_bold_text_with_bright_colors: true
+  
+draw_bold_text_with_bright_colors: false
+
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#1f2430'
+#     foreground: '#cbccc6'
+#     bright_foreground: '#f28779'
+
+#   # Normal colors
+#   normal:
+#     black:   '#212733' #
+#     red:     '#f08778' #
+#     green:   '#53bf97' #
+#     yellow:  '#fdcc60' #
+#     blue:    '#60b8d6' # 
+#     magenta: '#ec7171' #
+#     cyan:    '#98e6ca' #
+#     white:   '#fafafa' #
+
+#   # Brightened
+#   bright:
+#     black: '#686868'
+#     red: '#f58c7d'
+#     green: '#58c49c'
+#     yellow: '#ffd165'
+#     blue: '#65bddb'
+#     magenta: '#f17676'
+#     cyan: '#9debcf'
+#     white: '#ffffff'
+
+# TokyoNight Alacritty Colors
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x24283b'
+#     foreground: '0xc0caf5'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x1D202F'
+#     red:     '0xf7768e'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x7dcfff'
+#     white:   '0xa9b1d6'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x414868'
+#     red:     '0xf7768e'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x7dcfff'
+#     white:   '0xc0caf5'
+
+  # indexed_colors:
+  #   - { index: 16, color: '0xff9e64' }
+  #   - { index: 17, color: '0xdb4b4b' }
 
 # Color Settings (Gruvbox)
-colors:
-  primary:
-    background: '#0f0f0f'
-    foreground: '#ebdbb2'
+# colors:
+#   primary:
+#     background: '#0f0f0f'
+#     foreground: '#ebdbb2'
 
-  normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
+#   normal:
+#     black:   '#282828'
+#     red:     '#cc241d'
+#     green:   '#98971a'
+#     yellow:  '#d79921'
+#     blue:    '#458588'
+#     magenta: '#b16286'
+#     cyan:    '#689d6a'
+#     white:   '#a89984'
 
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+#   bright:
+#     black:   '#928374'
+#     red:     '#fb4934'
+#     green:   '#b8bb26'
+#     yellow:  '#fabd2f'
+#     blue:    '#83a598'
+#     magenta: '#d3869b'
+#     cyan:    '#8ec07c'
+#     white:   '#ebdbb2'
 
-  selection:
-    text: '0xffffff'
-    background: '0xdc3232'
-    white:   '0xffffff'
+#   selection:
+#     text: '0xffffff'
+#     background: '0xdc3232'
+#     white:   '0xffffff'
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+
 cursor:
   style: Block
   unfocused_hollow: true
